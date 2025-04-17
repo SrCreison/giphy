@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Fetch GIF Function ---
     async function fetchRandomGif() {
         // Construct API URL using the *current* rating
-        const apiUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=&rating=${currentRating}`;
+        const apiUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=gaming&rating=${currentRating}`;
 
         // Let the user know we're fetching
         gifImageElement.alt = 'Fetching a new GIF...';
