@@ -3,20 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gif Foda</title>
+    <title>Random GIF Fun!</title>
     <style>
         /* Optional: Some basic styling */
-        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f0f0f0; margin: 0; }
+        body {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        #controls {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #rating-buttons button, #refresh-button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #eee;
+        }
+        #rating-buttons button.active {
+            background-color: #007bff; /* Highlight active rating */
+            color: white;
+            border-color: #0056b3;
+        }
         #gif-container img {
             max-width: 90vw;
-            max-height: 80vh;
+            max-height: 70vh; /* Adjusted height slightly */
             border: 5px solid #333;
             border-radius: 10px;
             background-color: #fff; /* Placeholder background */
+            display: block; /* Prevent extra space below image */
+            margin: 0 auto; /* Center image if container is wider */
+        }
+        #current-rating-display {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
+
+    <div id="controls">
+        <div id="rating-buttons">
+            <span>Select Rating:</span>
+            <button class="rating-button" data-rating="g">G</button>
+            <button class="rating-button" data-rating="pg">PG</button>
+            <button class="rating-button" data-rating="pg-13">PG-13</button>
+            <button class="rating-button" data-rating="r">R</button>
+        </div>
+         <span id="current-rating-display">Current Rating: G</span> <button id="refresh-button">Fetch New GIF</button> </div>
+
     <div id="gif-container">
         <img id="random-gif" src="" alt="Random GIF loading...">
     </div>
