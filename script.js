@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ratingButtons = document.querySelectorAll('.rating-button');
     const refreshButton = document.getElementById('refresh-button');
     const ratingDisplay = document.getElementById('current-rating-display');
-    const apiKey = 'YOUR_API_KEY_HERE'; // <-- PASTE YOUR GIPHY API KEY HERE!
+    const apiKey = 'Vre3x3atZ8F5kaTDdeJdiKvpQJqB3aVl'; // <-- PASTE YOUR GIPHY API KEY HERE!
     const localStorageKey = 'giphyViewerRating'; // Key for storing rating
 
     let currentRating = 'g'; // Default rating
