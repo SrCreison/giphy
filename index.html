@@ -8,7 +8,7 @@
         /* Optional: Some basic styling */
         body {
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -18,9 +18,17 @@
         }
         #controls {
             margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 8px;
             text-align: center;
+            max-width: 90%;
         }
-        #rating-buttons button, #refresh-button {
+        .control-group {
+             margin-bottom: 15px;
+        }
+        #rating-buttons button, #refresh-button, #set-tag-button {
             padding: 8px 15px;
             margin: 5px;
             cursor: pointer;
@@ -29,37 +37,62 @@
             background-color: #eee;
         }
         #rating-buttons button.active {
-            background-color: #007bff; /* Highlight active rating */
+            background-color: #007bff;
             color: white;
             border-color: #0056b3;
         }
+         #tag-input {
+            padding: 8px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
         #gif-container img {
             max-width: 90vw;
-            max-height: 70vh; /* Adjusted height slightly */
+            max-height: 65vh; /* Adjusted height */
             border: 5px solid #333;
             border-radius: 10px;
-            background-color: #fff; /* Placeholder background */
-            display: block; /* Prevent extra space below image */
-            margin: 0 auto; /* Center image if container is wider */
-        }
-        #current-rating-display {
+            background-color: #fff;
             display: block;
-            margin-top: 10px;
-            font-weight: bold;
+            margin: 0 auto;
         }
+        #current-rating-display, #current-tag-display {
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #555;
+        }
+         label[for="tag-input"] {
+             margin-right: 5px;
+         }
     </style>
 </head>
 <body>
 
     <div id="controls">
-        <div id="rating-buttons">
+        <div class="control-group">
             <span>Select Rating:</span>
-            <button class="rating-button" data-rating="g">G</button>
-            <button class="rating-button" data-rating="pg">PG</button>
-            <button class="rating-button" data-rating="pg-13">PG-13</button>
-            <button class="rating-button" data-rating="r">R</button>
+            <div id="rating-buttons">
+                <button class="rating-button" data-rating="g">G</button>
+                <button class="rating-button" data-rating="pg">PG</button>
+                <button class="rating-button" data-rating="pg-13">PG-13</button>
+                <button class="rating-button" data-rating="r">R</button>
+            </div>
+            <span id="current-rating-display">Current Rating: G</span>
         </div>
-         <span id="current-rating-display">Current Rating: G</span> <button id="refresh-button">Fetch New GIF</button> </div>
+
+        <div class="control-group">
+             <label for="tag-input">Enter Tag:</label>
+             <input type="text" id="tag-input" placeholder="e.g., cats, funny">
+             <button id="set-tag-button">Set Tag</button>
+             <span id="current-tag-display">Current Tag: (none)</span>
+        </div>
+
+        <div class="control-group">
+            <button id="refresh-button">Fetch New GIF</button>
+        </div>
+    </div>
 
     <div id="gif-container">
         <img id="random-gif" src="" alt="Random GIF loading...">
