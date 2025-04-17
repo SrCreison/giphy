@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tagDisplay = document.getElementById('current-tag-display');
 
     // --- Configuration ---
-    const apiKey = 'YOUR_API_KEY_HERE'; // <-- PASTE YOUR GIPHY API KEY HERE!
+    const apiKey = 'Vre3x3atZ8F5kaTDdeJdiKvpQJqB3aVl'; // <-- PASTE YOUR GIPHY API KEY HERE!
     const ratingStorageKey = 'giphyViewerRating'; // Key for storing rating
     const tagStorageKey = 'giphyViewerTag';       // Key for storing tag
 
